@@ -1,5 +1,7 @@
 package com.transformalotu.transformalotu;
 
+import java.util.Arrays;
+
 /**
  * Clase que gestiona determinadas acciones gramáticas con una palabra
  * @author Samuel
@@ -46,6 +48,27 @@ public class Grammar {
     }
 
     /**
+     * Comprueba si la palabra es un anagrama
+     * @return true si es un anagrama
+     */
+    public boolean checkAnagrama(String anagram) {
+        String sortedWord = sortString(sanitizeString(this.word));
+        String sortedAnagram = sortString(sanitizeString(anagram));
+        return sortedWord.equals(sortedAnagram);
+    }
+
+    /**
+     * Ordena los caracteres de un string en orden numerico
+     * @param word
+     * @return string con los caracteres ordenados
+     */
+    private String sortString(String word) {
+        char[] charArray = word.toCharArray();
+        Arrays.sort(charArray);
+        return new String(charArray);
+    }
+
+    /**
      * Devuelve la string que se le pase por parametro revertida
      * @param word
      * @return string del reves
@@ -63,5 +86,5 @@ public class Grammar {
     private String sanitizeString(String word) {
         return word.replaceAll("[^\\w\\d]", "").toLowerCase();
     }
-
+    
 }
