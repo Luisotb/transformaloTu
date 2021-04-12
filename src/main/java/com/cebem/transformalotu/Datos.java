@@ -10,3 +10,17 @@ public class Datos {
     }
 
 }
+
+public class BorrarCaracteres{
+   
+    String message;
+    String DeleteChar;
+    String result="";
+        
+    public BorrarCaracteres(){
+        message="Texto de ejemplo";
+        DeleteChar="e";
+        result = message.replace(DeleteChar, " ");
+    }
+ 
+}
