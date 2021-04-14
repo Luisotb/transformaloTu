@@ -18,6 +18,11 @@ public class SaludaController {
         return "Adios amigo";
     }
 
+    @GetMapping("/saludame/{nombre}")
+    public String saludame(@PathVariable String nombre){
+        return "Hola que tal " + nombre;
+    }
+
     
 
         
