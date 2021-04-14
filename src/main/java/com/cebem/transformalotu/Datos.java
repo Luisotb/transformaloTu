@@ -13,4 +13,7 @@ public class Datos {
         return texto.toUpperCase();
     }
 
+    public String borrarCaracteres(String deleteChar){
+        return texto.replace(deleteChar, "");
+    }
 }
