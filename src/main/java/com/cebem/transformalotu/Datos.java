@@ -10,6 +10,11 @@ public class Datos {
         numeros = new int[]{1,2,3};
     }
 
+    String toUpperCase(){
+        
+        return texto.toUpperCase();
+    }
+
 }
     
 
