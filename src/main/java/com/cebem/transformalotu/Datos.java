@@ -9,9 +9,9 @@ public class Datos {
         numeros = new int[]{1,2,3};
     }
 
-    Strint [] MuestraCaracterLinea(){
-        for(int i = 0;i<texto.length();i++){
-        }
-        return texto.charAt(i);
+    void MuestraCaracterEnLinea() {
+		for (int i = 0; i < texto.length(); i++) {
+			System.out.println(texto.charAt(i));
+		} 
     }
 }
