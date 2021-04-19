@@ -12,6 +12,19 @@ public class Datos {
     String toUpperCase(){
         return texto.toUpperCase();
     }
+    
+    public boolean buscarPalabra(String palabra){
+        String[] txt = texto.split(" ");
+        boolean encontrado = false;
+
+        for(int i=0;i<txt.length;i++){
+            if(txt[i].equals(palabra)){
+                encontrado = true;
+            }
+        }
+        
+        return encontrado;
+    }
 
     String invierteTexto() {
         String finalText = "";
