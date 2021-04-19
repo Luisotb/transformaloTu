@@ -13,4 +13,14 @@ public class Datos {
         return texto.toUpperCase();
     }
 
+    String invierteTexto() {
+        String finalText = "";
+        int lText = texto.length();
+
+        for (int i = lText - 1; i >= 0; i--) {
+            finalText.concat((String)texto.charAt(i));
+        }
+        return finalText;
+    }
+
 }
