@@ -47,4 +47,12 @@ public class Datos {
     public String borrarCaracteres(String deleteChar){
         return texto.replace(deleteChar, "");
     }
+
+    public static String muestraCaracterEnLinea(String texto) {
+		String aux = "";
+		for (int i = 0; i < texto.length(); i++) {
+			aux+= texto.charAt(i)+"\n";
+		}
+		return aux;
+	}
 }
