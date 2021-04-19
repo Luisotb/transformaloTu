@@ -47,4 +47,13 @@ public class Datos {
     public String borrarCaracteres(String deleteChar){
         return texto.replace(deleteChar, "");
     }
+
+    void invertirOrdenDatos() {
+        int aux;
+        for (int i = 0; i < datos.length / 2; i++) {
+            aux = datos[i];
+            datos[i] = datos[datos.length - 1 - i];
+            datos[datos.length - 1 - i] = aux;
+        }
+    }
 }
