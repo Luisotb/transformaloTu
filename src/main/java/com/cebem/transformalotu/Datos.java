@@ -1,16 +1,24 @@
 package com.cebem.transformalotu;
 
-public class Datos {
-    String texto;
-    int numeros[];
+import java.util.Scanner;
 
-    public Datos(){
-        texto = "Cebem";
-        numeros = new int[]{1,2,3};
+public class Datos {
+    static Scanner sc = new Scanner(System.in);
+    String texto;
+
+    public static String buscarLetra(String texto, char letra) {
+        String posiciones = "";
+        for (int i = 0; i <= texto.length(); i++) {
+            if (texto.charAt(i) == letra) {
+                posiciones = posiciones + texto.charAt(i) + " , ";
+            }
+        }
+        return  posiciones;
     }
 
-    String toUpperCase(){
-        return texto.toUpperCase();
+    public Datos() {
+        texto = "Cebem";
+
     }
     
     public boolean buscarPalabra(String palabra){
