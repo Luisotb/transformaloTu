@@ -7,8 +7,6 @@ public class Contar {
 
     int stringLength = frase.length();
 
-    System.out.println("Esta frase tiene: " +stringLength+ " caracteres ");
-
    }
 }
 
