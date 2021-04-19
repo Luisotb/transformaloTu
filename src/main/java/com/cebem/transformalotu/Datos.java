@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Datos {
     static Scanner sc = new Scanner(System.in);
     String texto;
-
+    int[] datos;
     public static String buscarLetra(String texto, char letra) {
         String posiciones = "";
         for (int i = 0; i <= texto.length(); i++) {
@@ -18,7 +18,7 @@ public class Datos {
 
     public Datos() {
         texto = "Cebem";
-
+        datos = new int[] {1,2,3};
     }
     
     public boolean buscarPalabra(String palabra){
