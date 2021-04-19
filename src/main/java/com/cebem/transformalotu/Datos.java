@@ -31,7 +31,7 @@ public class Datos {
         int lText = texto.length();
 
         for (int i = lText - 1; i >= 0; i--) {
-            finalText.concat((String)texto.charAt(i));
+            finalText.concat(texto.charAt(i)+"");
         }
         return finalText;
     }
