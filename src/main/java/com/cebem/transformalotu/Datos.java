@@ -20,9 +20,14 @@ public class Datos {
         texto = "Cebem";
         datos = new int[] {1,2,3};
     }
-    
-    public boolean buscarPalabra(String palabra){
-        String[] txt = texto.split(" ");
+
+    /**
+     * Analiza si una palabra está o no en un texto.
+     * @param palabra La palabra que queremos buscar
+     * @return true si la palabra está en el texto, false en caso contrario
+     */
+    public boolean buscarPalabra(String palabra, String text){
+        String[] txt = text.split(" ");
         boolean encontrado = false;
 
         for(int i=0;i<txt.length;i++){
