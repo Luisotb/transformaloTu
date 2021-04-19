@@ -47,4 +47,15 @@ public class Datos {
     public String borrarCaracteres(String deleteChar){
         return texto.replace(deleteChar, "");
     }
+
+
+    public String espaciosPorGuiones(){
+        String palabr = texto.replaceAll(" ", "-");
+        return palabr;
+
+
+    }
+
+
+
 }
