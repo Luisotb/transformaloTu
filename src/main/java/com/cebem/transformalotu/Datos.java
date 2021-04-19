@@ -36,4 +36,7 @@ public class Datos {
         return finalText;
     }
 
+    public String borrarCaracteres(String deleteChar){
+        return texto.replace(deleteChar, "");
+    }
 }
