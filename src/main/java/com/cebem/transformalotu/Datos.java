@@ -49,8 +49,8 @@ public class Datos {
     }
 
     public String mayusculas(String toUpperCase){
-        String frase = "";
-        return frase.toUpperCase();
+        String texto = "";
+        return texto.toUpperCase();
     }
 
 }
