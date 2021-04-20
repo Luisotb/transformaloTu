@@ -47,10 +47,4 @@ public class Datos {
     public String borrarCaracteres(String deleteChar){
         return texto.replace(deleteChar, "");
     }
-
-    public String mayusculas(String toUpperCase){
-        String texto = "";
-        return texto.toUpperCase();
-    }
-
 }
