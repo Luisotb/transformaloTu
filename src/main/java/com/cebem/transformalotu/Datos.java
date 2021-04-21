@@ -71,4 +71,30 @@ public class Datos {
         return texto.toUpperCase();
     }
 
+    String sustituirVocalesPorI(String cadena) {
+        /**
+        * Este metodo recibe una cadena y la transforma sustituyendo todas las vocales
+        * por la vocal i. Esta sustitucion es sensitive case.
+        */
+       // definicion de varibles
+       String cadenaVocalesI = "";
+       char caracter;
+
+       // Bucle para recorrer la cadena caracter a caracter
+       for(int i=0; i<cadena.length(); i++) {
+           caracter = cadena.charAt(i);
+           // Condición para sustituir por 'i'
+           if(caracter == 'a' || caracter == 'e' || caracter == 'o' || caracter == 'u') {
+               cadenaVocalesI += 'i';
+           // Condición para sustituir por 'I'
+           }else if(caracter == 'A' || caracter == 'E' || caracter == 'O' || caracter == 'U') {
+               cadenaVocalesI += 'I';
+           // En caso de que no secumpla nada no se modifica el carácter
+           }else {
+               cadenaVocalesI += caracter;
+           }
+       }
+       return cadenaVocalesI;
+   }
+
 }
