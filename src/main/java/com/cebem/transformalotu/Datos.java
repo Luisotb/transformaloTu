@@ -48,9 +48,19 @@ public class Datos {
         return texto.replace(deleteChar, "");
     }
 
+
+ public static String muestraCaracterEnLinea(String texto) {
+		String aux = "";
+		for (int i = 0; i < texto.length(); i++) {
+			aux+= texto.charAt(i)+"\n";
+		}
+		return aux;
+	}
+
     public String mayusculas(String toUpperCase){
         String texto = "";
         return texto.toUpperCase();
     }
+
 
 }
