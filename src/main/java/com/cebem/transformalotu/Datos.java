@@ -49,6 +49,15 @@ public class Datos {
     }
 
 
+
+    public String espaciosPorGuiones(){
+        String palabr = texto.replaceAll(" ", "-");
+        return palabr;
+    }
+
+
+
+
  public static String muestraCaracterEnLinea(String texto) {
 		String aux = "";
 		for (int i = 0; i < texto.length(); i++) {
@@ -61,6 +70,5 @@ public class Datos {
         String texto = "";
         return texto.toUpperCase();
     }
-
 
 }
