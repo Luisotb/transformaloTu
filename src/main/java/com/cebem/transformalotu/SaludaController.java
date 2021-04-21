@@ -4,6 +4,7 @@ import java.text.MessageFormat;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class SaludaController {
+ 
+    @Autowired
+    FotoService fotoService;
+
     @GetMapping("/")
     public String saludar(){
         return "Hola tal estas. Soy el backend";
@@ -30,6 +35,7 @@ public class SaludaController {
         return "Hola que tal " + nombre;
     }
 
+   
     /*get para consultar*/
     @GetMapping("/saluda")
     public String SaludaPorQuery(@RequestParam String nombre,@RequestParam String apellidos){
@@ -49,6 +55,14 @@ public class SaludaController {
     public String borrar (@PathVariable String id){
         return null;
     }
+
+    @GetMapping("/damefoto")
+    public String dameFoto(){
+        String foto = fotoService.getFoto();
+        return "<img src='"+foto+"'/>";
+    }
+
+    
     
 }
     
