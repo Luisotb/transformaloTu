@@ -1,0 +1,15 @@
+{
+    "nombre": "Pedro",
+    "ciudad": "Vigo",
+    "Edad": 23,
+    "Casado": false,
+    "altura": 1.82,
+    "direccion": {
+        "calle": "Brasil 28",
+        "CP": 36204,
+        "letra": "A"
+    },
+    "comidas": ["Pizza", "Canelones", "Fletán"],
+
+}
+
