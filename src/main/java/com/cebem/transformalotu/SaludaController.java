@@ -20,6 +20,9 @@ public class SaludaController {
     @Autowired
     FotoService fotoService;
 
+    @Autowired
+    FakeFotoService fakeFotoService;
+
     @GetMapping("/")
     public String saludar(){
         return "Hola tal estas. Soy el backend";
@@ -62,8 +65,12 @@ public class SaludaController {
         return "<img src='"+foto+"'/>";
     }
 
-    
-    
+    @GetMapping("/damefotofake")
+    public String dameFotoFake(){
+        String foto = fakeFotoService.getFoto();
+        return "<img src='"+foto+"'/>";
+    }
+
 }
     
     
