@@ -1,8 +1,11 @@
-package com.cebem.transformalotu;
+package com.cebem.transformalotu.controllers;
 
 import java.text.MessageFormat;
 
 import javax.annotation.PostConstruct;
+
+import com.cebem.transformalotu.services.FakeFotoService;
+import com.cebem.transformalotu.services.FotoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
