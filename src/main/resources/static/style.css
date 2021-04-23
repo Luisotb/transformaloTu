@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.peso{
+    width: 2em;
+    font-weight: bold;
+}

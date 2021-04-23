@@ -4,21 +4,23 @@ import com.cebem.transformalotu.services.PokemonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class WebController {
     @Autowired
     PokemonService pokemonService;
 
     @RequestMapping("/peso/{nombrePokemon}")
-    public String peso(@PathVariable String nombrePokemon){
-        int peso = pokemonService.getPeso(nombrePokemon);
-        String msg = "<h1>peso del pokemon</h1>";
-        msg+="El pokemon "+nombrePokemon+" pesa "+peso;
-        msg+="<img src=''/>";
-        return msg;
+    public String peso(@PathVariable String nombrePokemon, 
+                    Model modelo){
+        int peso = pokemonService.getPeso(nombrePokemon) / 10;
+        String foto = pokemonService.getFoto(nombrePokemon);
+        modelo.addAttribute("nombre", nombrePokemon);
+        modelo.addAttribute("peso", peso);
+        modelo.addAttribute("foto", foto);
+        return "pokemon";
     }
 }
