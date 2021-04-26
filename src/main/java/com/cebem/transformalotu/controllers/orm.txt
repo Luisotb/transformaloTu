@@ -1,0 +1,15 @@
+
+BEA:
+insert into Alumno(nombre,nota) values('jose',5)
+select * from Alumno
+
+ANGEL:
+class Alumno{
+    String nombre;
+    float nota;
+}
+
+Alumno a1 = new Alumno("jose", 5)
+
+ORM.save(a1)
+ArrayList<Alumno> alumnos = ORM.findAll()
