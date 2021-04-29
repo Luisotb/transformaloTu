@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
+import com.cebem.transformalotu.services.PokemonBDService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,6 +27,9 @@ public class SaludaController {
     @Autowired
     FakeFotoService fakeFotoService;
 
+    @Autowired
+    PokemonBDService pokemonBDService;
+    
     @GetMapping("/")
     public String saludar(){
         return "Hola tal estas. Soy el backend";
@@ -74,6 +78,18 @@ public class SaludaController {
         return "<img src='"+foto+"'/>";
     }
 
+    @GetMapping("/pokemons")
+    public String pokemons(){
+        return pokemonBDService.obtenerTodosLosPokemons().toString();
+    }
+
+
+    /*peticion tipo post, para guardar, enviada por el body*/
+    @PostMapping("/insertaPokemon")
+    public String insertaPokemon(@RequestBody String nombre,@RequestBody Integer peso) {
+        
+        return "he guardado los datos de: " + nombre + " y la edad: " + peso + " del pokemon";
+    }
 }
     
     

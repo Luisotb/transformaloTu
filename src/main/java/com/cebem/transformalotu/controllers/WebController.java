@@ -14,9 +14,6 @@ public class WebController {
     @Autowired
     PokemonService pokemonService;
 
-    @Autowired
-    PokemonBDService pokemonBDService;
-
     @RequestMapping("/peso/{nombrePokemon}")
     public String peso(@PathVariable String nombrePokemon, 
                     Model modelo){
@@ -28,8 +25,9 @@ public class WebController {
         return "pokemon";
     }
 
-    @RequestMapping("/pokemons")
-    public String pokemons(){
-        return pokemonBDService.obtenerTodosLosPokemons().toString();
-    }
+
+    
+    
+
+    
 }
