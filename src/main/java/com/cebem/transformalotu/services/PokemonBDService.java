@@ -16,4 +16,8 @@ public class PokemonBDService {
     public ArrayList<PokemonModel> obtenerTodosLosPokemons(){
         return (ArrayList<PokemonModel>) pokemonRepository.findAll();
     }
+
+    public PokemonModel guardarPokemon(PokemonModel pokemon){
+       return pokemonRepository.save(pokemon);
+    }
 }

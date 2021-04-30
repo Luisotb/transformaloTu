@@ -26,6 +26,11 @@ public class WebController {
     }
 
 
+    @RequestMapping("/formularioPokemon")
+    public String formularioPokemon(){
+        return "formularioInsercionPokemon";
+    }
+
     
     
 

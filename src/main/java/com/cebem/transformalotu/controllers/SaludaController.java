@@ -1,9 +1,11 @@
 package com.cebem.transformalotu.controllers;
 
 import java.text.MessageFormat;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import com.cebem.transformalotu.models.PokemonModel;
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
 import com.cebem.transformalotu.services.PokemonBDService;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -86,9 +89,13 @@ public class SaludaController {
 
     /*peticion tipo post, para guardar, enviada por el body*/
     @PostMapping("/insertaPokemon")
-    public String insertaPokemon(@RequestBody String nombre,@RequestBody Integer peso) {
-        
-        return "he guardado los datos de: " + nombre + " y la edad: " + peso + " del pokemon";
+    public String insertaPokemon(@RequestParam Map<String, String> body) {
+        System.out.println(body.get("nombre"));
+        PokemonModel pokemon = new PokemonModel();
+        pokemon.setNombre(body.get("nombre"));
+        pokemon.setPeso(Integer.parseInt(body.get("peso")));
+        pokemonBDService.guardarPokemon(pokemon);
+        return "he guardado los datos del pokemon";
     }
 }
     
