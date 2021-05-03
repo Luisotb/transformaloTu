@@ -62,7 +62,7 @@ public class Datos {
         }
     }
 
-<<<<<<< HEAD
+
 
 
     public String espaciosPorGuiones(){
@@ -116,11 +116,11 @@ public class Datos {
        return cadenaVocalesI;
    }
 
-=======
+
     void MuestraCaracterEnLinea() {
 		for (int i = 0; i < texto.length(); i++) {
 			System.out.println(texto.charAt(i));
 		} 
     }
->>>>>>> e7e099027f1a6e6a075716eb0ad472fdd38df3b6
+
 }
