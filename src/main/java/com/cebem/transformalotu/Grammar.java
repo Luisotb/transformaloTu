@@ -20,10 +20,10 @@ public class Grammar {
      * Comprueba si la palabra es un anagrama
      * @return true si es un anagrama
      */
-    public static boolean checkAnagrama(String anagram) {
-        String sortedWord = sortString(sanitizeString(this.word));
-        String sortedAnagram = sortString(sanitizeString(anagram));
-        return sortedWord.equals(sortedAnagram);
+    public static boolean checkAnagrama(String anagramOne, String anagramTwo) {
+        String sortedAnagramOne = sortString(sanitizeString(anagramOne));
+        String sortedAnagramTwo = sortString(sanitizeString(anagramTwo));
+        return sortedAnagramOne.equals(sortedAnagramTwo);
     }
 
     /**
