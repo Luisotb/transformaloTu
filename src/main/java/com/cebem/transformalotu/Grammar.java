@@ -17,7 +17,7 @@ public class Grammar {
     }
 
     /**
-     * Comprueba si la palabra es un anagrama
+     * Comprueba si las palabras son un anagrama
      * @return true si es un anagrama
      */
     public static boolean checkAnagrama(String anagramOne, String anagramTwo) {
