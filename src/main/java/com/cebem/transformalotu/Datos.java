@@ -6,6 +6,7 @@ public class Datos {
     static Scanner sc = new Scanner(System.in);
     String texto;
     int[] datos;
+    
     public static String buscarLetra(String texto, char letra) {
         String posiciones = "";
         for (int i = 0; i <= texto.length(); i++) {
