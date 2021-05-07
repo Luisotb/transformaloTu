@@ -6,6 +6,7 @@ public class Datos {
     static Scanner sc = new Scanner(System.in);
     String texto;
     int[] datos;
+    
     public static String buscarLetra(String texto, char letra) {
         String posiciones = "";
         for (int i = 0; i <= texto.length(); i++) {
@@ -49,6 +50,27 @@ public class Datos {
         return finalText;
     }
 
+    public static String alternateCaps(String text){
+        boolean caps = true;
+        String result = "";
+        String[] words = text.split(" ");
+        for (int i = 0; i < words.length; i++) {
+            String word = "";
+            for (int j = 0; j < words[i].length(); j++) {
+                if (caps) {
+                    word += words[i].toUpperCase().charAt(j);
+                    caps = false;
+                } else {
+                    word += words[i].toLowerCase().charAt(j);
+                    caps = true;
+                }
+            }
+            words[i] = word + " ";
+            result += words[i];
+        }
+        return result;
+    }
+
     public String borrarCaracteres(String deleteChar){
         return texto.replace(deleteChar, "");
     }
@@ -64,6 +86,7 @@ public class Datos {
 
 
 
+
     public String espaciosPorGuiones(){
         String palabr = texto.replaceAll(" ", "-");
         return palabr;
@@ -71,7 +94,11 @@ public class Datos {
 
 
 
-
+/**
+ * Muestra un carácter del texto introducido por línea
+ * @param texto del que queremos separar sus caracteres
+ * @return devuelve cada carácter por línea
+ */
  public static String muestraCaracterEnLinea(String texto) {
 		String aux = "";
 		for (int i = 0; i < texto.length(); i++) {
@@ -110,5 +137,12 @@ public class Datos {
        }
        return cadenaVocalesI;
    }
+
+
+    void MuestraCaracterEnLinea() {
+		for (int i = 0; i < texto.length(); i++) {
+			System.out.println(texto.charAt(i));
+		} 
+    }
 
 }
