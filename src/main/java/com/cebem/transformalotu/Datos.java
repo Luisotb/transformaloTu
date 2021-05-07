@@ -144,5 +144,19 @@ public class Datos {
 			System.out.println(texto.charAt(i));
 		} 
     }
-
+    
+    /**Método para pasar a código ASCII un texto
+     * @param texto introducido por el usuario
+     * @return ascii de cada caracter introducida en la string texto
+     */  
+    public String asciiTu(String texto) {
+        String ascii="";
+        for(int i = 0;i<texto.length();i++){
+           ascii= "ASCII: " + (int) texto.charAt(i) + " es equivalente a: " + texto.charAt(i);
+        }
+        return ascii;
+        }
+        
+    }
+   
 }
