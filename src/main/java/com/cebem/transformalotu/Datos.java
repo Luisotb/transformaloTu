@@ -7,11 +7,12 @@ public class Datos {
     String texto;
     int[] datos;
     
-    public static String buscarLetra(String texto, char letra) {
+    public static String buscarLetra(String texto, String letra) {
         String posiciones = "";
-        for (int i = 0; i <= texto.length(); i++) {
-            if (texto.charAt(i) == letra) {
-                posiciones = posiciones + texto.charAt(i) + " , ";
+        int textoLongitud=texto.length();
+        for (int i = 0; i < textoLongitud; i++) {
+            if (texto.charAt(i) == letra.charAt(0)) {
+                posiciones = posiciones + i + " , ";
             }
         }
         return  posiciones;
