@@ -146,4 +146,12 @@ public class Datos {
 		} 
     }
 
+    public void tamanoDatos(){
+        int tamano = 0;
+        for (int i = 0; i <= datos.length; i++) {
+        	tamano++;
+        }
+        System.out.println(tamano);	        
+    }   
+
 }
