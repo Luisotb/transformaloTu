@@ -7,6 +7,21 @@ public class Datos {
     String texto;
     int[] datos;
     
+
+    public int datos(){
+        return texto;
+    }
+
+
+    public String getTexto(){
+        return texto;
+    }
+
+    public void setTexto(String texto){
+        this.texto = texto;
+    }
+
+
     public static String buscarLetra(String texto, String letra) {
         String posiciones = "";
         int textoLongitud=texto.length();
@@ -147,5 +162,33 @@ public class Datos {
 			System.out.println(texto.charAt(i));
 		} 
     }
+	
+	public int ContarVocalesYConsonantes(){
+		//Este metodo recibe una cadena y cuenta cuantas Vocales y Consonates tiene
+		String palabra;
+		int contador1=0, contador2=0,consonates;
+		palabra=sc.nextLine();
+		
+		for(int i=0; i<palabra.length();i++){
+			contador1++;
+		}
+		/*for(int i=0; i<palabra.length();i++){
+			for(palabra.charAt(i)=='a' || palabra.charAt(i)=='e' ||
+			   palabra.charAt(i)=='i' ||palabra.charAt(i)=='o' 
+			   ||palabra.charAt(i)=='u'){
+				contador2++;
+			}
+		}*/
+		//consonantes=contador1-contador2;
+		
+		return 0;
+				
+		
+	}
+			
+
+    public int tamanoDatos(){
+        return datos.length;	        
+    }   
 
 }
