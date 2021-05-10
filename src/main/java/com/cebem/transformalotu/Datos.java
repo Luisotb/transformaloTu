@@ -6,12 +6,15 @@ public class Datos {
     static Scanner sc = new Scanner(System.in);
     String texto;
     int[] datos;
-    
 
-    public int datos(){
-        return texto;
+
+    public int[] getDatos() {
+        return datos;
     }
 
+    public void setDatos(int[] datos) {
+        this.datos = datos;
+    }
 
     public String getTexto(){
         return texto;
@@ -91,13 +94,14 @@ public class Datos {
         return texto.replace(deleteChar, "");
     }
 
-    void invertirOrdenDatos() {
+    public int[] invertirOrdenDatos() {
         int aux;
         for (int i = 0; i < datos.length / 2; i++) {
             aux = datos[i];
             datos[i] = datos[datos.length - 1 - i];
             datos[datos.length - 1 - i] = aux;
         }
+        return datos;
     }
 
 
