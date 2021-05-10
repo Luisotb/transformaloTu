@@ -108,8 +108,8 @@ public class Datos {
 		return aux;
 	}
 
-    public String mayusculas(String toUpperCase){
-        String texto = "";
+    public String mayusculas(){
+        if(texto == null) return "";
         return texto.toUpperCase();
     }
 
