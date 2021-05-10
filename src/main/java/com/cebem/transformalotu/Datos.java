@@ -7,6 +7,12 @@ public class Datos {
     String texto;
     int[] datos;
     
+
+    public int datos(){
+        return texto;
+    }
+
+
     public String getTexto(){
         return texto;
     }
@@ -14,6 +20,7 @@ public class Datos {
     public void setTexto(String texto){
         this.texto = texto;
     }
+
 
     public static String buscarLetra(String texto, String letra) {
         String posiciones = "";
@@ -177,5 +184,9 @@ public class Datos {
 		
 	}
 			
+
+    public int tamanoDatos(){
+        return datos.length;	        
+    }   
 
 }
