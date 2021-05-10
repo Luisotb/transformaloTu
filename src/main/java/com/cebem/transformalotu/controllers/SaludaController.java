@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import com.cebem.transformalotu.Datos;
 import com.cebem.transformalotu.models.PokemonModel;
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
@@ -20,10 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 public class SaludaController {
- 
+
     @Autowired
     FotoService fotoService;
 
@@ -32,62 +32,60 @@ public class SaludaController {
 
     @Autowired
     PokemonBDService pokemonBDService;
-    
+
     @GetMapping("/")
-    public String saludar(){
+    public String saludar() {
         return "Hola tal estas. Soy el backend";
     }
-   
+
     @GetMapping("/chao")
-    public String despedirse(){
+    public String despedirse() {
         return "Adios amigo";
     }
-      
+
     @GetMapping("/saludame/{nombre}")
-    public String saludame(@PathVariable String nombre){
+    public String saludame(@PathVariable String nombre) {
         return "Hola que tal " + nombre;
     }
 
-   
-    /*get para consultar*/
+    /* get para consultar */
     @GetMapping("/saluda")
-    public String SaludaPorQuery(@RequestParam String nombre,@RequestParam String apellidos){
-        //return "Hola que tal estás" + nombre + " " + apellidos;
-        Object params[] = {nombre, apellidos};
+    public String SaludaPorQuery(@RequestParam String nombre, @RequestParam String apellidos) {
+        // return "Hola que tal estás" + nombre + " " + apellidos;
+        Object params[] = { nombre, apellidos };
         return MessageFormat.format("Qué tal estás {0} {1}", params);
     }
 
-    /*peticion tipo post, para guardar, enviada por el body*/
+    /* peticion tipo post, para guardar, enviada por el body */
     @PostMapping("/guardar")
-    public String Guardar(@RequestBody String nombre,@RequestBody int edad) {
-        
+    public String Guardar(@RequestBody String nombre, @RequestBody int edad) {
+
         return "he guardado los datos de: " + nombre + " y la edad: " + edad;
     }
 
     @DeleteMapping("/borrar/{id}")
-    public String borrar (@PathVariable String id){
+    public String borrar(@PathVariable String id) {
         return null;
     }
 
     @GetMapping("/damefoto")
-    public String dameFoto(){
+    public String dameFoto() {
         String foto = fotoService.getFoto();
-        return "<img src='"+foto+"'/>";
+        return "<img src='" + foto + "'/>";
     }
 
     @GetMapping("/damefotofake")
-    public String dameFotoFake(){
+    public String dameFotoFake() {
         String foto = fakeFotoService.getFoto();
-        return "<img src='"+foto+"'/>";
+        return "<img src='" + foto + "'/>";
     }
 
     @GetMapping("/pokemons")
-    public String pokemons(){
+    public String pokemons() {
         return pokemonBDService.obtenerTodosLosPokemons().toString();
     }
 
-
-    /*peticion tipo post, para guardar, enviada por el body*/
+    /* peticion tipo post, para guardar, enviada por el body */
     @PostMapping("/insertaPokemon")
     public String insertaPokemon(@RequestParam Map<String, String> body) {
         System.out.println(body.get("nombre"));
@@ -98,7 +96,9 @@ public class SaludaController {
         return "he guardado los datos del pokemon";
     }
 
-    
+    @GetMapping("/dametamanodatos")
+    public int dameTamanoDatos() {
+        Datos dato1 = new Datos();
+        return dato1.tamanoDatos();
+    }
 }
-    
-    
