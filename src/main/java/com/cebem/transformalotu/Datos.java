@@ -7,6 +7,14 @@ public class Datos {
     String texto;
     int[] datos;
     
+    public String getTexto(){
+        return texto;
+    }
+
+    public void setTexto(String texto){
+        this.texto = texto;
+    }
+
     public static String buscarLetra(String texto, String letra) {
         String posiciones = "";
         int textoLongitud=texto.length();
