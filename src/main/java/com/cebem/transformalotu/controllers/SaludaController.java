@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import com.cebem.transformalotu.Datos;
 import com.cebem.transformalotu.models.PokemonModel;
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
@@ -97,6 +98,12 @@ public class SaludaController {
         pokemonBDService.guardarPokemon(pokemon);
         return "he guardado los datos del pokemon";
     }
+
+    @GetMapping("/muestra/{texto}")
+    public static String muestraCaracterEnLinea(@PathVariable String texto) {
+        String aux = Datos.muestraCaracterEnLinea(texto);
+		return aux+"\n";
+	}
 }
     
     
