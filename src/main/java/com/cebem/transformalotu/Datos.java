@@ -113,11 +113,13 @@ public class Datos {
         return texto.toUpperCase();
     }
 
+     /**
+     * Devuelve una cadena con todas las vocales sustituidas por la i
+     * @param cadena que queremos modificar
+     * @return un String con todas las vocales sustituidas
+     */
     String sustituirVocalesPorI(String cadena) {
-        /**
-        * Este metodo recibe una cadena y la transforma sustituyendo todas las vocales
-        * por la vocal i. Esta sustitucion es sensitive case.
-        */
+       
        // definicion de varibles
        String cadenaVocalesI = "";
        char caracter;
