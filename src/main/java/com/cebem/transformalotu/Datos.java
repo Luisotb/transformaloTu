@@ -7,6 +7,10 @@ public class Datos {
     String texto;
     int[] datos;
     
+    public int datos(){
+        return texto;
+    }
+
     public static String buscarLetra(String texto, String letra) {
         String posiciones = "";
         int textoLongitud=texto.length();
@@ -146,12 +150,8 @@ public class Datos {
 		} 
     }
 
-    public void tamanoDatos(){
-        int tamano = 0;
-        for (int i = 0; i <= datos.length; i++) {
-        	tamano++;
-        }
-        System.out.println(tamano);	        
+    public int tamanoDatos(){
+        return datos.length;	        
     }   
 
 }
