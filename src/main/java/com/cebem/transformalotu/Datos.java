@@ -145,5 +145,29 @@ public class Datos {
 			System.out.println(texto.charAt(i));
 		} 
     }
+	
+	public int ContarVocalesYConsonantes(){
+		//Este metodo recibe una cadena y cuenta cuantas Vocales y Consonates tiene
+		String palabra;
+		int contador1=0, contador2=0,consonates;
+		palabra=sc.nextLine();
+		
+		for(int i=0; i<palabra.lenght();i++){
+			contador1++;
+		}
+		for(int i=0; i<palabra.lenght();i++){
+			for(palabra.charArt(i)=='a' || palabra.charArt(i)=='e' ||
+			   palabra.charArt(i)=='i' ||palabra.charArt(i)=='o' 
+			   ||palabra.charArt(i)=='u' ||){
+				contador2++;
+			}
+		}
+		consonantes=contador1-contador2;
+		
+		return consonates;
+				
+		
+	}
+			
 
 }
