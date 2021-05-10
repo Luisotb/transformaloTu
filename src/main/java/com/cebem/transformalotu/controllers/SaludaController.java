@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import com.cebem.transformalotu.Datos;
 import com.cebem.transformalotu.models.PokemonModel;
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
@@ -98,7 +99,14 @@ public class SaludaController {
         return "he guardado los datos del pokemon";
     }
 
-    
+
+    @GetMapping("/mayusculas/{texto}")
+    public String pasarAMayusculas(@PathVariable String texto){
+        Datos datos = new Datos();
+        datos.setTexto(texto);
+        return datos.mayusculas();
+    }
+
 }
     
     
