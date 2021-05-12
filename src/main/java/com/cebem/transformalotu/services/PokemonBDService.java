@@ -13,11 +13,11 @@ public class PokemonBDService {
     @Autowired
     PokemonRepository pokemonRepository;
 
-    public ArrayList<PokemonModel> obtenerTodosLosPokemons(){
+    public ArrayList<PokemonModel> obtenerTodosLosPokemons() {
         return (ArrayList<PokemonModel>) pokemonRepository.findAll();
     }
 
-    public PokemonModel guardarPokemon(PokemonModel pokemon){
-       return pokemonRepository.save(pokemon);
+    public PokemonModel guardarPokemon(PokemonModel pokemon) {
+        return pokemonRepository.save(pokemon);
     }
 }

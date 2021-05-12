@@ -1,6 +1,5 @@
 package com.cebem.transformalotu.controllers;
 
-import com.cebem.transformalotu.services.PokemonBDService;
 import com.cebem.transformalotu.services.PokemonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,7 @@ public class WebController {
     PokemonService pokemonService;
 
     @RequestMapping("/peso/{nombrePokemon}")
-    public String peso(@PathVariable String nombrePokemon, 
-                    Model modelo){
+    public String peso(@PathVariable String nombrePokemon, Model modelo) {
         int peso = pokemonService.getPeso(nombrePokemon) / 10;
         String foto = pokemonService.getFoto(nombrePokemon);
         modelo.addAttribute("nombre", nombrePokemon);
@@ -25,14 +23,9 @@ public class WebController {
         return "pokemon";
     }
 
-
     @RequestMapping("/formularioPokemon")
-    public String formularioPokemon(){
+    public String formularioPokemon() {
         return "formularioInsercionPokemon";
     }
 
-    
-    
-
-    
 }

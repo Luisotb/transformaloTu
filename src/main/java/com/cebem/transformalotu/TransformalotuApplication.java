@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class TransformalotuApplication {
 
 	@Bean
-	public RestTemplate getresttemplate(){
+	public RestTemplate getresttemplate() {
 		return new RestTemplate();
 	}
 

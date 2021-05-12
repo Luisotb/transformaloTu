@@ -1,11 +1,9 @@
 package com.cebem.transformalotu.services;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-class FakePerson{
+class FakePerson {
     public String age;
     public String image_url;
 }
@@ -16,9 +14,9 @@ public class FakeFotoService {
     @Autowired
     RestTemplate restTemplate;
 
-    public String getFoto(){
+    public String getFoto() {
         String url = "https://fakeface.rest/face/json";
-        FakePerson json = restTemplate.getForObject(url, FakePerson.class );
+        FakePerson json = restTemplate.getForObject(url, FakePerson.class);
         System.out.println(json.age);
         return json.image_url;
     }
