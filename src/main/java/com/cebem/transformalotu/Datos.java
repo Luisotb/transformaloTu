@@ -115,7 +115,7 @@ public class Datos {
  * @param texto del que queremos separar sus caracteres
  * @return devuelve cada carácter por línea
  */
- public static String muestraCaracterEnLinea(String texto) {
+ public String muestraCaracterEnLinea(String texto) {
 		String aux = "";
 		for (int i = 0; i < texto.length(); i++) {
 			aux+= texto.charAt(i)+"\n";

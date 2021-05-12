@@ -107,6 +107,16 @@ public class SaludaController {
         return datos.mayusculas();
     }
 
+
+    @GetMapping("/muestraCaracterLinea/{texto}")
+    public static String muestraCaracterEnLinea(@PathVariable String texto) {
+        Datos datos = new Datos();
+        String aux = datos.muestraCaracterEnLinea(texto);
+        datos.setTexto(aux);
+		return "<pre>"+aux+"</pre>";
+	}
+    
+
 }
     
     
