@@ -1,4 +1,5 @@
 package com.cebem.transformalotu;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -15,6 +16,21 @@ public class DatosTest {
         boolean resultado2 = prueba.buscarPalabra("hola", texto);
         assertTrue(resultado);
         assertFalse(resultado2);
+    }
+
+    /**
+     * Testeo del metodo sustituirVocalesPorI
+     * Se envia la variable de tipo String "texto"
+     *  y se espera que devuelva un String igual a "textoSolucion"
+     */
+    @Test
+    void sustituirVocalesPorITest(){
+        Datos datos = new Datos();
+        String texto = "Esto es una prueba para comprobar que se sustituyan todas las vocales";
+        String textoSolucion = "Isti is ini priibi piri cimpribir qii si sistitiyin tidis lis vicilis";
+
+        String resultado = datos.sustituirVocalesPorI(texto);
+        assertEquals(textoSolucion, resultado);
     }
     
 }

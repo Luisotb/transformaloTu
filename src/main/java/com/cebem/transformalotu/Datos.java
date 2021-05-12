@@ -6,11 +6,31 @@ public class Datos {
     static Scanner sc = new Scanner(System.in);
     String texto;
     int[] datos;
-    public static String buscarLetra(String texto, char letra) {
+
+
+    public int[] getDatos() {
+        return datos;
+    }
+
+    public void setDatos(int[] datos) {
+        this.datos = datos;
+    }
+
+    public String getTexto(){
+        return texto;
+    }
+
+    public void setTexto(String texto){
+        this.texto = texto;
+    }
+
+
+    public static String buscarLetra(String texto, String letra) {
         String posiciones = "";
-        for (int i = 0; i <= texto.length(); i++) {
-            if (texto.charAt(i) == letra) {
-                posiciones = posiciones + texto.charAt(i) + " , ";
+        int textoLongitud=texto.length();
+        for (int i = 0; i < textoLongitud; i++) {
+            if (texto.charAt(i) == letra.charAt(0)) {
+                posiciones = posiciones + i + " , ";
             }
         }
         return  posiciones;
@@ -74,13 +94,14 @@ public class Datos {
         return texto.replace(deleteChar, "");
     }
 
-    void invertirOrdenDatos() {
+    public int[] invertirOrdenDatos() {
         int aux;
         for (int i = 0; i < datos.length / 2; i++) {
             aux = datos[i];
             datos[i] = datos[datos.length - 1 - i];
             datos[datos.length - 1 - i] = aux;
         }
+        return datos;
     }
 
 
@@ -98,7 +119,7 @@ public class Datos {
  * @param texto del que queremos separar sus caracteres
  * @return devuelve cada carácter por línea
  */
- public static String muestraCaracterEnLinea(String texto) {
+ public String muestraCaracterEnLinea(String texto) {
 		String aux = "";
 		for (int i = 0; i < texto.length(); i++) {
 			aux+= texto.charAt(i)+"\n";
@@ -106,16 +127,18 @@ public class Datos {
 		return aux;
 	}
 
-    public String mayusculas(String toUpperCase){
-        String texto = "";
+    public String mayusculas(){
+        if(texto == null) return "";
         return texto.toUpperCase();
     }
 
+     /**
+     * Devuelve una cadena con todas las vocales sustituidas por la i
+     * @param cadena que queremos modificar
+     * @return un String con todas las vocales sustituidas
+     */
     String sustituirVocalesPorI(String cadena) {
-        /**
-        * Este metodo recibe una cadena y la transforma sustituyendo todas las vocales
-        * por la vocal i. Esta sustitucion es sensitive case.
-        */
+       
        // definicion de varibles
        String cadenaVocalesI = "";
        char caracter;
@@ -165,9 +188,14 @@ public class Datos {
 		consonates=contador1-contador2;
 
 		return consonates;
+
 		
 
 	}
 			
+
+    public int tamanoDatos(){
+        return datos.length;	        
+    }   
 
 }
