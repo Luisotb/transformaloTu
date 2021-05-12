@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.Map;
 
 import com.cebem.transformalotu.Datos;
-import com.cebem.transformalotu.models.PokemonModel;
+import com.cebem.transformalotu.models.GatitoModel;
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
-import com.cebem.transformalotu.services.PokemonBDService;
+import com.cebem.transformalotu.services.GatitoBDService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,11 +29,22 @@ public class SaludaController {
     FakeFotoService fakeFotoService;
 
     @Autowired
-    PokemonBDService pokemonBDService;
+    GatitoBDService gatitoBDService;
 
     @GetMapping("/")
     public String saludar() {
-        return "Hola tal estas. Soy el backend";
+        String msg="<h1>Bienvenido al backend de Cebem: </h1>";
+        msg+="Peticion por GET /chao  <a href='/chao'>Probar<a/><br/>";
+        msg+="Peticion con un parametro por GET /saludame/XXX (con parametro) <a href='/saludame/Pepe'>Probar<a/><br/>";
+        msg+="Peticion con datos por query por GET /saluda?nombre=XXX&apellidos=YYYY  <a href='/saluda?nombre=Bea&apellidos=Olalde'>Probar<a/><br/>";
+        msg+="Peticion por GET acceso a API para obtener foto aleatoria /damefoto <a href='/damefoto'>Probar<a/><br/>";
+        msg+="Peticion por GET acceso a API para obtener foto generada por IA /damefotofake <a href='/damefotofake'>Probar<a/><br/>";
+        msg+="Peticion por GET obtener todos los gatos almacenados en la BD /listarGatitos <a href='/listarGatitos'>Probar<a/><br/>";
+        msg+="Peticion por GET acceso al formulario de inserción de gatitos /formularioGatito <a href='/formularioGatito'>Probar<a/><br/>";
+        msg+="Peticion por GET convertir un texto a mayuscula /mayusculas/XXX <a href='/mayusculas/angel'>Probar<a/><br/>";
+
+        return msg;
+        
     }
 
     @GetMapping("/chao")
@@ -78,20 +89,20 @@ public class SaludaController {
         return "<img src='" + foto + "'/>";
     }
 
-    @GetMapping("/pokemons")
-    public String pokemons() {
-        return pokemonBDService.obtenerTodosLosPokemons().toString();
+    @GetMapping("/listarGatitos")
+    public String gatitos() {
+        return gatitoBDService.obtenerTodosLosGatitos().toString();
     }
 
     /* peticion tipo post, para guardar, enviada por el body */
-    @PostMapping("/insertaPokemon")
-    public String insertaPokemon(@RequestParam Map<String, String> body) {
+    @PostMapping("/insertaGatito")
+    public String insertaGatito(@RequestParam Map<String, String> body) {
         System.out.println(body.get("nombre"));
-        PokemonModel pokemon = new PokemonModel();
+        GatitoModel pokemon = new GatitoModel();
         pokemon.setNombre(body.get("nombre"));
         pokemon.setPeso(Integer.parseInt(body.get("peso")));
-        pokemonBDService.guardarPokemon(pokemon);
-        return "he guardado los datos del pokemon";
+        gatitoBDService.guardarGatito(pokemon);
+        return "he guardado los datos del gatito";
     }
 
 
