@@ -7,6 +7,14 @@ public class Datos {
     String texto;
     int[] datos;
 
+    public int[] getDatos() {
+        return datos;
+    }
+
+    public void setDatos(int[] datos) {
+        this.datos = datos;
+    }
+
     public String getTexto() {
         return texto;
     }
@@ -85,13 +93,14 @@ public class Datos {
         return texto.replace(deleteChar, "");
     }
 
-    void invertirOrdenDatos() {
+    public int[] invertirOrdenDatos() {
         int aux;
         for (int i = 0; i < datos.length / 2; i++) {
             aux = datos[i];
             datos[i] = datos[datos.length - 1 - i];
             datos[datos.length - 1 - i] = aux;
         }
+        return datos;
     }
 
     public String espaciosPorGuiones() {
@@ -105,7 +114,7 @@ public class Datos {
      * @param texto del que queremos separar sus caracteres
      * @return devuelve cada carácter por línea
      */
-    public static String muestraCaracterEnLinea(String texto) {
+    public String muestraCaracterEnLinea(String texto) {
         String aux = "";
         for (int i = 0; i < texto.length(); i++) {
             aux += texto.charAt(i) + "\n";
@@ -119,6 +128,12 @@ public class Datos {
         return texto.toUpperCase();
     }
 
+    /**
+     * Devuelve una cadena con todas las vocales sustituidas por la i
+     * 
+     * @param cadena que queremos modificar
+     * @return un String con todas las vocales sustituidas
+     */
     String sustituirVocalesPorI(String cadena) {
         /**
          * Este metodo recibe una cadena y la transforma sustituyendo todas las vocales
@@ -149,6 +164,34 @@ public class Datos {
         for (int i = 0; i < texto.length(); i++) {
             System.out.println(texto.charAt(i));
         }
+    }
+
+    public int ContarVocalesYConsonantes() {
+
+        // Este metodo recibe una cadena y cuenta cuantas Vocales y Consonates tiene
+        String palabra;
+        int contador1 = 0, contador2 = 0, consonates;
+        palabra = sc.nextLine();
+
+        for (int i = 0; i < palabra.length(); i++) {
+            contador1++;
+        }
+        for (int i = 0; i < palabra.length(); i++) {
+
+            if (palabra.charAt(i) == 'a' || palabra.charAt(i) == 'e' || palabra.charAt(i) == 'i'
+                    || palabra.charAt(i) == 'o' || palabra.charAt(i) == 'u') {
+
+                contador2++;
+            }
+        }
+        consonates = contador1 - contador2;
+
+        return consonates;
+
+    }
+
+    public int tamanoDatos() {
+        return datos.length;
     }
 
 }

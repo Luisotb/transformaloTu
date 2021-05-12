@@ -1,6 +1,7 @@
 package com.cebem.transformalotu.controllers;
 
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Map;
 
 import com.cebem.transformalotu.Datos;
@@ -93,11 +94,52 @@ public class SaludaController {
         return "he guardado los datos del pokemon";
     }
 
+
     @GetMapping("/mayusculas/{texto}")
     public String pasarAMayusculas(@PathVariable String texto) {
         Datos datos = new Datos();
         datos.setTexto(texto);
         return datos.mayusculas();
     }
+    
+    @GetMapping("/busca/{palabra}/{frase}")
+    public String buscarPalabra(@PathVariable String frase, @PathVariable String palabra) {
+        Datos datos = new Datos();
+        String text = "";
+
+        if (datos.buscarPalabra(palabra, frase) == true) {
+            text = "La palabra " + palabra + " SI se encuentra en el texto.";
+        } else {
+            text = "La palabra " + palabra + " NO está en el texto.";
+        }
+        return text;
+    }
+
+
+    @GetMapping("/invertirarray/{array}")
+    public String invertirOrdenDatos(@PathVariable String array) {
+        Datos datos = new Datos();
+        String datosFinal;
+        String[] datosString = array.split(",");
+        int [] datos2 = new int [datosString.length];
+        for(int i=0; i<datosString.length; i++) {
+            datos2[i] = Integer.parseInt(datosString[i]);
+        }
+        datos.setDatos(datos2);
+        datos2 = datos.invertirOrdenDatos();
+        datosFinal = Arrays.toString(datos2);
+        return datosFinal;
+    }
+
+
+    @GetMapping("/muestraCaracterLinea/{texto}")
+    public static String muestraCaracterEnLinea(@PathVariable String texto) {
+        Datos datos = new Datos();
+        String aux = datos.muestraCaracterEnLinea(texto);
+        datos.setTexto(aux);
+		return "<pre>"+aux+"</pre>";
+	}
+    
+
 
 }
