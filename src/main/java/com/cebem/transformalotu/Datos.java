@@ -190,8 +190,12 @@ public class Datos {
 
     }
 
-    public int tamanoDatos() {
-        return datos.length;
+    public int[] generaArrayPorTamano(int n) {
+        int[] Array = new int[n];
+        for(int i = 0; i < Array.length; i++){
+            Array[i] = (int) (Math.random()*100);
+        }
+        return Array;
     }
 
 }

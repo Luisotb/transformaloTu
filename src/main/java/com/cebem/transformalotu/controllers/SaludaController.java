@@ -150,7 +150,11 @@ public class SaludaController {
         datos.setTexto(aux);
 		return "<pre>"+aux+"</pre>";
 	}
-    
 
+    @GetMapping("/generaArrayPorTamano/{Array}")
+    public static int[] generaArray(@PathVariable int n){
+        Datos datos = new Datos();
+        return datos.generaArrayPorTamano(n);
+    }
 
 }
