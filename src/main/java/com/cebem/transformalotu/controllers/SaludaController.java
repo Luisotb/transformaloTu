@@ -101,20 +101,15 @@ public class SaludaController {
         datos.setTexto(texto);
         return datos.mayusculas();
     }
-    
-    @GetMapping("/busca/{palabra}/{frase}")
-    public String buscarPalabra(@PathVariable String frase, @PathVariable String palabra) {
+
+    @GetMapping("/busca")
+    public boolean buscarPalabra(@RequestParam String frase, @RequestParam String palabra) {
         Datos datos = new Datos();
-        String text = "";
 
-        if (datos.buscarPalabra(palabra, frase) == true) {
-            text = "La palabra " + palabra + " SI se encuentra en el texto.";
-        } else {
-            text = "La palabra " + palabra + " NO está en el texto.";
-        }
-        return text;
+        boolean resultado = datos.buscarPalabra(palabra, frase);
+
+        return resultado ;
     }
-
 
     @GetMapping("/invertirarray/{array}")
     public String invertirOrdenDatos(@PathVariable String array) {
