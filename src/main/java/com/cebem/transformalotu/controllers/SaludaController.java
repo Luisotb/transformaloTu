@@ -1,6 +1,7 @@
 package com.cebem.transformalotu.controllers;
 
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -108,6 +109,22 @@ public class SaludaController {
     }
 
 
+    @GetMapping("/invertirarray/{array}")
+    public String invertirOrdenDatos(@PathVariable String array) {
+        Datos datos = new Datos();
+        String datosFinal;
+        String[] datosString = array.split(",");
+        int [] datos2 = new int [datosString.length];
+        for(int i=0; i<datosString.length; i++) {
+            datos2[i] = Integer.parseInt(datosString[i]);
+        }
+        datos.setDatos(datos2);
+        datos2 = datos.invertirOrdenDatos();
+        datosFinal = Arrays.toString(datos2);
+        return datosFinal;
+    }
+
+
     @GetMapping("/muestraCaracterLinea/{texto}")
     public static String muestraCaracterEnLinea(@PathVariable String texto) {
         Datos datos = new Datos();
@@ -116,6 +133,7 @@ public class SaludaController {
 		return "<pre>"+aux+"</pre>";
 	}
     
+
 
 }
     
