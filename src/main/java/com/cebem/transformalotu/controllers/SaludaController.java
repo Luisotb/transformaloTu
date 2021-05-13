@@ -151,6 +151,10 @@ public class SaludaController {
 		return "<pre>"+aux+"</pre>";
 	}
     
+    @GetMapping("/convertirACesar/{texto}/{codigo}")
+    public String cifradoCesar(@PathVariable String texto,@PathVariable int codigo ) {
 
-
+        String textoCifrado = Datos.cifradoCesar(texto, codigo);
+        return textoCifrado;
+    }
 }
