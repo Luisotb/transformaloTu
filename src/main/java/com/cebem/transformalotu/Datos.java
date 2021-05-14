@@ -1,6 +1,7 @@
 package com.cebem.transformalotu;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Datos {
     static Scanner sc = new Scanner(System.in);
@@ -221,6 +222,18 @@ public class Datos {
             return cifrado.toString();
         }
     
+
+        public int contarCaracteres(){
+            int caracteresEncontrados = 0;
+            String regEx = "^[a-zA-Z0-9]$";
+            for(int i = 0; i<texto.length();i++){
+                if(Pattern.matches(regEx, texto.substring(i,i+1))){
+                    caracteresEncontrados+=1;
+                }
+                
+            }
+            return caracteresEncontrados;
+        }
 } 
 
 
