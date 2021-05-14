@@ -151,11 +151,19 @@ public class SaludaController {
 		return "<pre>"+aux+"</pre>";
 	}
     
+
     @GetMapping("/espacioPorGuines/{frase}")
     public String espaciosPorGuiones(@PathVariable String texto) {
         Datos datos = new Datos();
         datos.setTexto(texto);
         return datos.espaciosPorGuiones();
+    }
+
+    @GetMapping("/convertirACesar/{texto}/{codigo}")
+    public String cifradoCesar(@PathVariable String texto,@PathVariable int codigo ) {
+
+        String textoCifrado = Datos.cifradoCesar(texto, codigo);
+        return textoCifrado;
     }
 
 }
