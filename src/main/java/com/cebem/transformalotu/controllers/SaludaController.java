@@ -161,4 +161,12 @@ public class SaludaController {
         return textoCifrado;
     }
 
+    @GetMapping("/generaArrayPorTamano/{number}")
+    public int[] generaArrayPorTamano(@PathVariable int number){
+        Datos datos = new Datos();
+
+        int[] res = datos.generaArrayPorTamano(number); 
+        return res;
+    }
+
 }
