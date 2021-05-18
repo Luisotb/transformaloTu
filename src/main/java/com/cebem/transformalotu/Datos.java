@@ -191,10 +191,16 @@ public class Datos {
 
     }
 
-    public int tamanoDatos() {
-        return datos.length;
-    }
+    public int[] generaArrayPorTamano(int number){
+        
+        int[] arr = new int[number];
 
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = (int) (Math.random()*100)+1;
+        }
+
+        return arr;
+    }
 
 
     

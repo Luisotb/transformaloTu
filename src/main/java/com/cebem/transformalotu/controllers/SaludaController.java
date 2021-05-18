@@ -161,11 +161,21 @@ public class SaludaController {
         return textoCifrado;
     }
 
+
     @GetMapping("/sustituirVocalesPorI/{textoEntrada}")
     public static String sustituirVocalesPorI(@PathVariable String textoEntrada) {
         Datos datos = new Datos();
         String textoSalida = datos.sustituirVocalesPorI(textoEntrada);
 		return "<h3>"+textoSalida+"</h3>";
 	}
+
+    @GetMapping("/generaArrayPorTamano/{number}")
+    public int[] generaArrayPorTamano(@PathVariable int number){
+        Datos datos = new Datos();
+
+        int[] res = datos.generaArrayPorTamano(number); 
+        return res;
+    }
+
 
 }
