@@ -166,7 +166,7 @@ public class Datos {
 			System.out.println(texto.charAt(i));
 		} 
     }
-	public int ContarVocalesYConsonantes(){
+	public int ContarVocalesYConsonantes(String palabra){
 	
 		//Este metodo recibe una cadena y cuenta cuantas Vocales y Consonates tiene
 		String palabra;
