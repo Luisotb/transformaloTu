@@ -135,7 +135,7 @@ public class Datos {
      * @param cadena que queremos modificar
      * @return un String con todas las vocales sustituidas
      */
-    String sustituirVocalesPorI(String cadena) {
+    public String sustituirVocalesPorI(String cadena) {
         /**
          * Este metodo recibe una cadena y la transforma sustituyendo todas las vocales
          * por la vocal i. Esta sustitucion es sensitive case.
