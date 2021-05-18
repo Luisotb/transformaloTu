@@ -132,6 +132,14 @@ public class SaludaController {
         datos.setTexto(aux);
 		return "<pre>"+aux+"</pre>";
 	}
+	
+	@GetMapping("/contarVocyCon/{palabra}")
+
+	public int ContarVocalesYConsonantes(@PathVariable String palabra) {
+   	  Datos datos= new Datos;
+ 	 int textoPasado=Datos.ContarVocalesYConsonantes(palabra);
+   		return textoPasado;
+	
     
 
 
