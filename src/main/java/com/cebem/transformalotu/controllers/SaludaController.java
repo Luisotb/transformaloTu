@@ -177,5 +177,10 @@ public class SaludaController {
         return res;
     }
 
+    @GetMapping("/alternarcaps")
+    public String alternarcaps(@RequestParam String word) {
+        return Datos.alternateCaps(word);
+    }
+
 
 }
