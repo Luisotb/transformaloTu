@@ -1,4 +1,4 @@
-package com.cebem.transformalotu;
+package com.cebem.transformalotu.util;
 
 import java.util.Arrays;
 
