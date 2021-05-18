@@ -17,7 +17,7 @@ public class GatitoBDService {
         return (ArrayList<GatitoModel>) gatitoRepository.findAll();
     }
 
-    public GatitoModel guardarGatito(GatitoModel pokemon) {
-        return gatitoRepository.save(pokemon);
+    public GatitoModel guardarGatito(GatitoModel gatito) {
+        return gatitoRepository.save(gatito);
     }
 }
