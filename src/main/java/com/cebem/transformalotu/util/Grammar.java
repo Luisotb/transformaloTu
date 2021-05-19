@@ -1,14 +1,16 @@
-package com.cebem.transformalotu;
+package com.cebem.transformalotu.util;
 
 import java.util.Arrays;
 
 /**
  * Clase que gestiona determinadas acciones gramáticas con palabras
+ * 
  * @author Samuel
  */
 public class Grammar {
     /**
      * Comprueba si la palabra es un palindromo
+     * 
      * @return true si es un palindromo
      */
     public static boolean checkPalindromo(String word) {
@@ -18,6 +20,7 @@ public class Grammar {
 
     /**
      * Comprueba si las palabras son un anagrama
+     * 
      * @return true si es un anagrama
      */
     public static boolean checkAnagrama(String anagramOne, String anagramTwo) {
@@ -28,6 +31,7 @@ public class Grammar {
 
     /**
      * Ordena los caracteres de un string en orden numerico
+     * 
      * @param word
      * @return string con los caracteres ordenados
      */
@@ -39,6 +43,7 @@ public class Grammar {
 
     /**
      * Devuelve la string que se le pase por parametro revertida
+     * 
      * @param word
      * @return string del reves
      */
@@ -47,13 +52,13 @@ public class Grammar {
     }
 
     /**
-     * Elimina los signos de puntuacion de una palabra usando una
-     * expresión regular
+     * Elimina los signos de puntuacion de una palabra usando una expresión regular
+     * 
      * @param word
      * @return string sin signos de puntuacion
      */
     private static String sanitizeString(String word) {
         return word.replaceAll("[^\\w\\d]", "").toLowerCase();
     }
-    
+
 }

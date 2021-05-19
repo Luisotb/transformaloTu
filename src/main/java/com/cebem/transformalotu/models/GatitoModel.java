@@ -12,11 +12,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="pokemon")
-public class PokemonModel {
+@Table(name = "gatito")
+public class GatitoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique=true, nullable=false)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     private String nombre;
@@ -61,9 +61,7 @@ public class PokemonModel {
 
     @Override
     public String toString() {
-        return "PokemonModel [nombre=" + nombre + ", peso=" + peso + "]";
+        return "GatitoModel [nombre=" + nombre + ", peso=" + peso + "]";
     }
 
-    
-    
 }
