@@ -1,8 +1,10 @@
 package com.cebem.transformalotu.controllers;
 
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Map;
 
+import com.cebem.transformalotu.Datos;
 import com.cebem.transformalotu.models.GatitoModel;
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
@@ -56,6 +58,7 @@ public class SaludaController {
     }
 
     /* get para consultar */
+    // /saluda?nombre=XXX&apellidos=YYY
     @GetMapping("/saluda")
     public String SaludaPorQuery(@RequestParam String nombre, @RequestParam String apellidos) {
         // return "Hola que tal estás" + nombre + " " + apellidos;
@@ -96,13 +99,12 @@ public class SaludaController {
     @PostMapping("/insertaGatito")
     public String insertaGatito(@RequestParam Map<String, String> body) {
         System.out.println(body.get("nombre"));
-        GatitoModel gatito = new GatitoModel();
-        gatito.setNombre(body.get("nombre"));
-        gatito.setPeso(Integer.parseInt(body.get("peso")));
-        gatitoBDService.guardarGatito(gatito);
+        GatitoModel pokemon = new GatitoModel();
+        pokemon.setNombre(body.get("nombre"));
+        pokemon.setPeso(Integer.parseInt(body.get("peso")));
+        gatitoBDService.guardarGatito(pokemon);
         return "he guardado los datos del gatito";
     }
-
 
 
     @GetMapping("/mayusculas/{texto}")
@@ -144,14 +146,6 @@ public class SaludaController {
         datos.setTexto(aux);
 		return "<pre>"+aux+"</pre>";
 	}
-	
-	@GetMapping("/contarVocyCon/{palabra}")
-
-	public int ContarVocalesYConsonantes(@PathVariable String palabra) {
-   	  Datos datos= new Datos;
- 	 int textoPasado=Datos.ContarVocalesYConsonantes(palabra);
-   		return textoPasado;
-	
     
 
     @GetMapping("/espacioPorGuines/{frase}")
@@ -167,28 +161,5 @@ public class SaludaController {
         String textoCifrado = Datos.cifradoCesar(texto, codigo);
         return textoCifrado;
     }
-
-
-    @GetMapping("/sustituirVocalesPorI/{textoEntrada}")
-    public static String sustituirVocalesPorI(@PathVariable String textoEntrada) {
-        Datos datos = new Datos();
-        String textoSalida = datos.sustituirVocalesPorI(textoEntrada);
-		return "<h3>"+textoSalida+"</h3>";
-	}
-
-    @GetMapping("/generaArrayPorTamano/{number}")
-    public int[] generaArrayPorTamano(@PathVariable int number){
-        Datos datos = new Datos();
-
-        int[] res = datos.generaArrayPorTamano(number); 
-        return res;
-    }
-
-    @GetMapping("/alternarcaps")
-    public String alternarcaps(@RequestParam String word) {
-        return Datos.alternateCaps(word);
-    }
-
-
 
 }
