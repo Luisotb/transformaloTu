@@ -168,44 +168,11 @@ public class Datos {
 		} 
     }
   
-	public int ContarVocalesYConsonantes(String palabra){
-	
-		//Este metodo recibe una cadena y cuenta cuantas Vocales y Consonates tiene
-		String palabra;
-		int contador1=0, contador2=0,consonates;
-		palabra=sc.nextLine();
-
-		for(int i=0; i<palabra.length();i++){
-			contador1++;
-		}
-		for(int i=0; i<palabra.length();i++){
-			
-			if(palabra.charAt(i)=='a' || palabra.charAt(i)=='e' ||
-			   palabra.charAt(i)=='i' ||palabra.charAt(i)=='o' 
-			   ||palabra.charAt(i)=='u'){
-			
-				contador2++;
-			}
-		}
-		consonates=contador1-contador2;
-
-		return consonates;
-
-		
-
-	}
-			
 
     public int tamanoDatos(){
         return datos.length;	        
     }   
 
-}
-
-        for (int i = 0; i < texto.length(); i++) {
-            System.out.println(texto.charAt(i));
-        }
-    }
 
     public int ContarVocalesYConsonantes() {
 
