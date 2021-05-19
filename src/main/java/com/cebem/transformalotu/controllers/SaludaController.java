@@ -1,10 +1,8 @@
 package com.cebem.transformalotu.controllers;
 
 import java.text.MessageFormat;
-import java.util.Arrays;
 import java.util.Map;
 
-import com.cebem.transformalotu.Datos;
 import com.cebem.transformalotu.models.GatitoModel;
 import com.cebem.transformalotu.services.FakeFotoService;
 import com.cebem.transformalotu.services.FotoService;
@@ -98,12 +96,13 @@ public class SaludaController {
     @PostMapping("/insertaGatito")
     public String insertaGatito(@RequestParam Map<String, String> body) {
         System.out.println(body.get("nombre"));
-        GatitoModel pokemon = new GatitoModel();
-        pokemon.setNombre(body.get("nombre"));
-        pokemon.setPeso(Integer.parseInt(body.get("peso")));
-        gatitoBDService.guardarGatito(pokemon);
+        GatitoModel gatito = new GatitoModel();
+        gatito.setNombre(body.get("nombre"));
+        gatito.setPeso(Integer.parseInt(body.get("peso")));
+        gatitoBDService.guardarGatito(gatito);
         return "he guardado los datos del gatito";
     }
+
 
 
     @GetMapping("/mayusculas/{texto}")
@@ -181,6 +180,7 @@ public class SaludaController {
     public String alternarcaps(@RequestParam String word) {
         return Datos.alternateCaps(word);
     }
+
 
 
 }

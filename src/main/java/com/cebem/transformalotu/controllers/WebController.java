@@ -13,6 +13,7 @@ public class WebController {
     @Autowired
     PokemonService pokemonService;
 
+    
     /** Este método sirve para poder consultar el peso de un pokemon usando el api de pokeapi.co */
     @RequestMapping("/peso/{nombrePokemon}")
     public String peso(@PathVariable String nombrePokemon, Model modelo) {
