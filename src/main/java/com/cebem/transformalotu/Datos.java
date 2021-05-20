@@ -247,6 +247,23 @@ public class Datos {
             }
             return caracteresEncontrados;
         }
+
+         // calcula la media de los valores de un array de enteros
+         public int calcularMedia(int array[]) {
+
+            int res = 0;
+    
+            for (int i = 0; i < array.length; i++) {
+    
+                res += array[i];
+    
+            }
+    
+            res = res / array.length;
+
+            return res;
+    
+        }
 } 
 
 
