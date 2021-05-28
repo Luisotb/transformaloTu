@@ -100,5 +100,9 @@ public class DatosController {
         int[] res = datos.generaArrayPorTamano(number);
         return res;
     }
-
+ @GetMapping("/transformconsonantintos/{text}")
+ public static String transformconsonantintos(@PathVariable String text){
+	Datos datos = new Datos();
+ 	String exittext = datos.transformconsonantintos(text);
+    }
 }
