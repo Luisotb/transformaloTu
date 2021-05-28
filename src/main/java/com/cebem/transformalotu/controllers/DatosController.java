@@ -1,13 +1,13 @@
 package com.cebem.transformalotu.controllers;
 
-import java.text.MessageFormat;
-import java.util.Arrays;
-import com.cebem.transformalotu.Datos;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import com.cebem.transformalotu.util.Grammar;
+    import java.text.MessageFormat;
+    import java.util.Arrays;
+    import com.cebem.transformalotu.Datos;
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.PathVariable;
+    import org.springframework.web.bind.annotation.RequestParam;
+    import org.springframework.web.bind.annotation.RestController;
+    import com.cebem.transformalotu.util.Grammar;
 
 @RestController
 public class DatosController {
@@ -104,5 +104,6 @@ public class DatosController {
  public static String transformconsonantintos(@PathVariable String text){
 	Datos datos = new Datos();
  	String exittext = datos.transformconsonantintos(text);
+     return exittext;
     }
 }
