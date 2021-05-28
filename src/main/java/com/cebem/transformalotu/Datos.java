@@ -264,6 +264,14 @@ public class Datos {
             return res;
     
         }
+
+        public String cambiarBV(String texto) {
+		
+            String textoCambiado = texto.replace("b","_").replace("v", "_")
+            .replace("B","_").replace("V","_");
+            return textoCambiado;		
+        }
+
 } 
 
 
