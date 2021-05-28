@@ -264,7 +264,21 @@ public class Datos {
             return res;
     
         }
+
+	public String transformconsonantintos(String texto) {
+		char [] equalslowercase = {'b','c','d','f','g','h','j','q','l','m','n','ñ','p','q','r','t','v','w','x','y','z'};
+		char [] equalscapital = {'B','C','D','F','G','H','J','Q','L','M','N','Ñ','P','Q','R','T','V','W','X','Y','Z'};
+
+	for (int i = 0; i < 21; i++) {
+		texto=texto.replace(equalslowercase[i], 'S');
+		texto=texto.replace(equalscapital[i], 's');
+		}
+		return texto;
+	}
 } 
+
+
+
 
 
 
