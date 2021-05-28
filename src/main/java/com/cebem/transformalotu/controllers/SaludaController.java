@@ -162,4 +162,13 @@ public class SaludaController {
         return textoCifrado;
     }
 
+    @GetMapping("/invertirTexto/{texto}")
+    public String invertirTexto(@PathVariable String texto) {
+
+        Datos datos = new Datos();
+        datos.setTexto(texto);
+        return datos.invierteTexto();
+
+    }
+
 }
