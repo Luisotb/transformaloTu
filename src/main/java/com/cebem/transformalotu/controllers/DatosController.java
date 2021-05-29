@@ -101,4 +101,12 @@ public class DatosController {
         return res;
     }
 
+    @GetMapping("/sustituirBV/{texto}")
+    public String cambiarBV(@PathVariable String texto) {
+        Datos datos = new Datos();
+        String datos.setTexto(texto);
+        return datos.cambiarBV();
+    } 
+
+
 }
