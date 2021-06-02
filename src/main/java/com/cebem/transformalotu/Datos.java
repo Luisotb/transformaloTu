@@ -265,6 +265,16 @@ public class Datos {
     
         }
 
+        
+    public String cambiarBV(String texto) {
+		
+        String textoCambiado = texto.replace("b","_").replace("v", "_")
+        .replace("B","_").replace("V","_");
+        return textoCambiado;		
+    }
+
+
+
 	public String transformconsonantintos(String texto) {
 		char [] equalslowercase = {'b','c','d','f','g','h','j','q','l','m','n','ñ','p','q','r','t','v','w','x','y','z'};
 		char [] equalscapital = {'B','C','D','F','G','H','J','Q','L','M','N','Ñ','P','Q','R','T','V','W','X','Y','Z'};
