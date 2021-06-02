@@ -100,6 +100,16 @@ public class DatosController {
         int[] res = datos.generaArrayPorTamano(number);
         return res;
     }
+
+
+    @GetMapping("/sustituirBV/{texto}")
+    public String cambiarBV(@PathVariable String texto) {
+        Datos datos = new Datos();        
+        datos.cambiarBV(texto);
+        return datos;
+    }
+
+
  @GetMapping("/transformconsonantintos/{text}")
  public static String transformconsonantintos(@PathVariable String text){
 	Datos datos = new Datos();
