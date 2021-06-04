@@ -59,7 +59,7 @@ public class Datos {
         return encontrado;
     }
 
-    String invierteTexto() {
+    public String invierteTexto() {
         String finalText = "";
         int lText = texto.length();
 

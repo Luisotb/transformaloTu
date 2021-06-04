@@ -106,4 +106,12 @@ public class DatosController {
  	String exittext = datos.transformconsonantintos(text);
      return exittext;
     }
+
+    @GetMapping("/invierteTexto/{text}")
+    public static String invertirTexto(@PathVariable String text) {
+        Datos datos = new Datos();
+        datos.setTexto(text);
+        String sol = datos.invierteTexto();
+        return sol;
+    }
 }
