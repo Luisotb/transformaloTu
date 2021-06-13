@@ -114,4 +114,16 @@ public class DatosController {
         String sol = datos.invierteTexto();
         return sol;
     }
+
+    @GetMapping("/traductorAscii/{texto}")
+public String traductorAscii(@PathVariable String text) {
+    Datos datos = new Datos();
+    String ascii =datos.asciiTu(text);
+    return "- La frase original es: " + text +
+
+            "<br>" + "<br>" +
+
+            "- La frase en ascii es: " + ascii;
+}
+
 }

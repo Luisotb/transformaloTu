@@ -275,6 +275,14 @@ public class Datos {
 		}
 		return texto;
 	}
+
+    public String asciiTu(String texto) {
+        String ascii = "";
+        for (int i = 0; i < texto.length(); i++) {
+          ascii += (int) texto.charAt(i) + texto.charAt(i);
+        }
+        return  ascii;
+      }
 } 
 
 
